@@ -18,6 +18,7 @@
   --team-bg-color: #f5f4fa;
   --projects-bg-color: #eeeeee;
   --header-border-clr: #ececec;
+  --icons-color: #afb1b8;
 }
 
 body {
@@ -135,10 +136,16 @@ button {
   line-height: calc(16 / 14);
   letter-spacing: 0.02em;
   color: var(--description-text-color);
+  align-items: center;
 
-  display: block;
+  display: flex;
   padding-top: 32px;
   padding-bottom: 32px;
+  gap: 10px;
+}
+
+.header-icons {
+  fill: currentColor;
 }
 
 .logo,
@@ -156,6 +163,15 @@ button {
 
   padding-top: 60px;
   padding-bottom: 60px;
+}
+
+.footer-container {
+  display: flex;
+  gap: 70px;
+}
+
+.adress-container {
+  width: 230px;
 }
 
 .footer-logo {
@@ -197,11 +213,55 @@ button {
   color: var(--accent-project-color);
 }
 
+.jointous-container {
+  border: border-box;
+  border: none;
+  padding-top: 12px;
+}
+.jointous-title {
+  font-size: 14px;
+  font-style: normal;
+  line-height: 16px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--main-bg-color);
+
+  margin-bottom: 20px;
+}
+
+.jointous-list {
+  display: flex;
+  gap: 10px;
+}
+
+.jointous-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.jointous-link:hover {
+  background-color: var(--accent-project-color);
+}
+
+.jointous-icons {
+  fill: var(--main-bg-color);
+}
+
 /* -----------------------------------Main page styles----------------------------------- */
 
 /* ----------------------------Hero styles---------------------------- */
 .hero {
-  background-color: var(--dark-bg-color);
+  max-width: 1600px;
+  margin: 0 auto;
+  background-image: url(../images/hero/hero-shadow.png), url(../images/hero/hero-bg-img.jpg),
+    url(../images/hero/hero-bg-clr.png);
+  background-repeat: no-repeat;
+  background-position: top center;
 
   padding-top: 200px;
   padding-bottom: 200px;
@@ -237,13 +297,22 @@ button {
 
 /*---------------------------- Main content ----------------------------*/
 .about-title,
-.team-title {
+.team-title,
+.clients-title {
   font-weight: 700;
   font-size: 36px;
   line-height: calc(42 / 36);
   text-align: center;
 
   margin-bottom: 50px;
+}
+
+.benefits-icons {
+  display: block;
+  background-color: var(--team-bg-color);
+  border-radius: 4px;
+  padding: 25px 100px;
+  margin-bottom: 30px;
 }
 
 .benefit-title {
@@ -321,6 +390,66 @@ button {
   line-height: 19px;
   text-align: center;
   color: var(--description-text-color);
+  margin-bottom: 16px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+
+  color: var(--icons-color);
+}
+
+.social-link:hover,
+.social-link:focus,
+.social-icons:hover,
+.social-icons:focus {
+  background-color: var(--accent-project-color);
+  color: var(--main-bg-color);
+}
+
+.social-icons {
+  fill: currentColor;
+}
+
+/* ---------------------Clients section--------------------- */
+
+.clients-list {
+  display: flex;
+  gap: 30px;
+}
+
+.clients-link {
+  display: flex;
+  width: 170px;
+  height: 92px;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--icons-color);
+  border: 1px solid var(--icons-color);
+  border-radius: 4px;
+}
+
+.clients-link:hover,
+.clients-link:focus {
+  color: var(--accent-project-color);
+  border-color: var(--accent-project-color);
+}
+
+.client-icons {
+  width: 106px;
+  height: 60px;
+  fill: currentColor;
 }
 
 /*------------------------ Portfolio page styles ------------------------*/
@@ -344,6 +473,8 @@ button {
 .filters-button:focus {
   color: var(--main-bg-color);
   background-color: var(--accent-project-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .filters-item:not(:last-child) {
@@ -374,6 +505,13 @@ button {
 .projects-item {
   flex-basis: calc((100% - 30px * 2) / 3);
 }
+
+.projects-item:hover,
+.projects-item:focus {
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
 .progect-frame {
   border: 1px solid var(--projects-bg-color);
   border-top: none;
